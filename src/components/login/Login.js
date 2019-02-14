@@ -4,60 +4,104 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
-//import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import ShowTest from '../test/ShowTest';
+
 
 
 class SignIn extends Component {
-    render() {
-    const { classes } = this.props;
-    SignIn.propTypes = {
-        classes: PropTypes.object.isRequired,
-    };
+  constructor(props) {
+      super(props);
 
-        return (
-            <main className={classes.main}>
-                <CssBaseline />
-                <Paper className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Sign in
-        </Typography>
-                    <form className={classes.form}>
-                        <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="email">Email Address</InputLabel>
-                            <Input id="email" name="email" autoComplete="email" autoFocus />
-                        </FormControl>
-                        <FormControl margin="normal" required fullWidth>
-                            <InputLabel htmlFor="password">Password</InputLabel>
-                            <Input name="password" type="password" id="password" autoComplete="current-password" />
-                        </FormControl>
-                        {/* <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
-                            label="Remember me"
-                        /> */}
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className={classes.submit} >
-                            Sign in
-                        </Button>
-                    </form>
-                </Paper>
-            </main>
-        );    
-    }
+      this.state = {
+          auth: false
+      }
+  }
+
+  onSubmitHandler = (e) => {
+      e.preventDefault();
+
+      const name = e.target.elements.email.value;
+      const password = e.target.elements.password.value;
+      
+      const { Users } = this.props;
+      let a = Users.some( (user) => {
+          return (user.name === name && user.pass === password)
+          })
+          
+      if (a) {
+        this.setState({ auth: a });
+        localStorage.setItem('username', name);
+        localStorage.setItem('password', password);
+      } else {
+        alert('Incorrect Username/Password!');
+      }      
+  }
+
+
+  render() {
+  const { classes } = this.props;
+
+  SignIn.propTypes = {
+      classes: PropTypes.object.isRequired,
+  };
+
+      return (
+          (this.state.auth) ? (<ShowTest />) :  
+          <main className={classes.main}>
+          <CssBaseline />
+          <Paper className={classes.paper}>
+            <Avatar className={classes.avatar}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <form
+              onSubmit={this.onSubmitHandler}
+              className={classes.form}
+            >
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="email">Email Address</InputLabel>
+                <Input
+                  id="email"
+                  name="email"
+                  autoComplete="email"
+                  autoFocus
+                />
+              </FormControl>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="password">Password</InputLabel>
+                <Input
+                  name="password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+              </FormControl>
+              {/* <FormControlLabel
+                          control={<Checkbox value="remember" color="primary" />}
+                          label="Remember me"
+                      /> */}
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+              >
+                Sign in
+              </Button>
+            </form>
+          </Paper>
+        </main> 
+      );    
+  }
 }
 
 const styles = theme => ({

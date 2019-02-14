@@ -1,0 +1,46 @@
+.test-style {
+    margin-top: -22px !important;
+}
+
+@media only screen and (max-width: 450px) { 
+    .head-title {
+        display: block !important;
+        color: aqua;
+    }
+
+    .logout-img {
+        position: relative;
+        bottom: 32px;
+        right: 160px;
+    }
+}
+
+.header {
+    color: white;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    text-align: center;
+    background-color: #505050;
+}
+
+.head-title {
+    display: inline;
+}
+
+.logout-img {
+    width: 30px;
+    height: 25px;
+    float: right;
+    margin-top: 15px;
+    margin-right: 25px;
+}
+
+.tests-list {
+    text-align: left !important;
+}
+
+.list-item {
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(49, 94, 177);
+}
