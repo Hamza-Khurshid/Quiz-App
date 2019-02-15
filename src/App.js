@@ -40,9 +40,34 @@ class App extends Component {
             key: 'javascript1',
             content: [ {
               qNo: 1,
-              qStmnt: '',
-              qChoice: ['', '', '', ''],
-              ans: ['']
+              qStmnt: 'Question 1 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            },{
+              qNo: 2,
+              qStmnt: 'Question 2 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 3,
+              qStmnt: 'Question 3 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 4,
+              qStmnt: 'Question 4 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            },{
+              qNo: 5,
+              qStmnt: 'Question 5 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 6,
+              qStmnt: 'Question 6 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
             } ]
           }, {
             id: 2,
@@ -50,9 +75,19 @@ class App extends Component {
             key: 'javascript2',
             content: [ {
               qNo: 1,
-              qStmnt: '',
-              qChoice: ['', '', '', ''],
-              ans: ['']
+              qStmnt: 'Question 1 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 2,
+              qStmnt: 'Question 2 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 3,
+              qStmnt: 'Question 3 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
             } ]
           } ] 
         }, 
@@ -64,9 +99,19 @@ class App extends Component {
             key: 'python1',
             content: [ {
               qNo: 1,
-              qStmnt: '',
-              qChoice: ['', '', '', ''],
-              ans: ['']
+              qStmnt: 'Question 1 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 2,
+              qStmnt: 'Question 2 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 3,
+              qStmnt: 'Question 3 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
             } ]
           }, {
             id: 2,
@@ -74,9 +119,19 @@ class App extends Component {
             key: 'python2',
             content: [ {
               qNo: 1,
-              qStmnt: '',
-              qChoice: ['', '', '', ''],
-              ans: ['']
+              qStmnt: 'Question 1 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 2,
+              qStmnt: 'Question 2 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 3,
+              qStmnt: 'Question 3 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
             } ]
           } ] 
         }, 
@@ -88,9 +143,19 @@ class App extends Component {
             key: 'react1',
             content: [ {
               qNo: 1,
-              qStmnt: '',
-              qChoice: ['', '', '', ''],
-              ans: ['']
+              qStmnt: 'Question 1 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 2,
+              qStmnt: 'Question 2 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 3,
+              qStmnt: 'Question 3 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
             } ]
           }, {
             id: 2,
@@ -98,9 +163,19 @@ class App extends Component {
             key: 'react2',
             content: [ {
               qNo: 1,
-              qStmnt: '',
-              qChoice: ['', '', '', ''],
-              ans: ['']
+              qStmnt: 'Question 1 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 2,
+              qStmnt: 'Question 2 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
+            }, {
+              qNo: 3,
+              qStmnt: 'Question 3 statement',
+              qChoice: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+              ans: ['Option 3']
             } ]
           } ] 
         }
@@ -109,14 +184,17 @@ class App extends Component {
 
   }
 
+  
   render() {
     return (
-      <TestProvider value={this.state.courses}>
-        { (localStorage.getItem('username') === null ) ? <Signin Users={this.state.users} /> :
-          <ShowTest />
-        }
-        
-      </TestProvider>
+      
+        <TestProvider value={this.state.courses}>
+          { (localStorage.getItem('username') === null ) ? <Signin Users={this.state.users} /> :
+            <ShowTest />
+          }
+          
+        </TestProvider>
+      
     );
   }
 }

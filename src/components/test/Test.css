@@ -29,10 +29,14 @@
 
 .logout-img {
     width: 30px;
-    height: 25px;
+    height: 30px;
     float: right;
     margin-top: 15px;
     margin-right: 25px;
+}
+
+.logout-img:hover {
+    cursor: pointer;
 }
 
 .tests-list {
@@ -42,5 +46,30 @@
 .list-item {
     font-size: 24px;
     font-weight: 500;
+    display: block;
+    margin-left: 15px;
+    text-decoration: none;
     color: rgb(49, 94, 177);
+}
+
+.key-form {
+    text-align: center;
+}
+
+.key-input, .button {
+    zoom: 1.5;
+    margin-top: 25px;
+}
+
+.key-input {
+    padding: 2px;
+    border: none;
+    border-bottom: 2px #505050 solid;
+}
+
+.button {
+    color: white;
+    border: none;
+    padding: 5px 13px;
+    background-color: #505050;
 }
